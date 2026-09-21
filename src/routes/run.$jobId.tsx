@@ -43,8 +43,8 @@ function RunConsole() {
   const { jobId } = Route.useParams();
   const [job, setJob] = useState<JobSnapshot | null>(null);
   const [missing, setMissing] = useState(false);
-  const [tab, setTab] = useState<"queue" | "activity" | "data" | "target">("activity");
-  const [pane, setPane] = useState<"mapping" | "people" | "delta" | "audit">("mapping");
+  const [tab, setTab] = useState<"queue" | "activity" | "data">("activity");
+  const [pane, setPane] = useState<"mapping" | "people" | "delta" | "audit" | "push">("mapping");
   const [busy, setBusy] = useState(false);
 
   useEffect(() => {
@@ -83,7 +83,8 @@ function RunConsole() {
   useEffect(() => {
     if (job?.status === "awaiting_human") setTab("queue");
     if (job?.status === "ready_to_push" || job?.status === "partial_failure" || job?.status === "complete") {
-      setTab("target");
+      setPane("push");
+      setTab("data");
     }
   }, [job?.status]);
 
@@ -196,7 +197,7 @@ function RunConsole() {
         </div>
 
         <div className="mt-4 flex gap-1 overflow-x-auto rounded-lg bg-muted p-1 lg:hidden">
-          {(["activity", "queue", "data", "target"] as const).map((id) => (
+          {(["activity", "queue", "data"] as const).map((id) => (
             <button
               key={id}
               type="button"
@@ -218,12 +219,15 @@ function RunConsole() {
             <EventFeed job={job} />
           </div>
 
-          <div className={cn("min-w-0", tab !== "data" && tab !== "target" && "hidden lg:block", tab === "target" && "block")}>
-            {tab === "target" ? (
-              <PushPanel job={job} busy={busy} onPush={push} onRollback={rollback} />
-            ) : (
-              <Workbench job={job} pane={pane} setPane={setPane} />
-            )}
+          <div className={cn("min-w-0", tab !== "data" && "hidden lg:block")}>
+            <Workbench
+              job={job}
+              pane={pane}
+              setPane={setPane}
+              busy={busy}
+              onPush={push}
+              onRollback={rollback}
+            />
           </div>
 
           <div className={cn("min-w-0", tab !== "queue" && "hidden lg:block")}>
@@ -408,15 +412,21 @@ function Workbench({
   job,
   pane,
   setPane,
+  busy,
+  onPush,
+  onRollback,
 }: {
   job: JobSnapshot;
-  pane: "mapping" | "people" | "delta" | "audit";
-  setPane: (p: "mapping" | "people" | "delta" | "audit") => void;
+  pane: "mapping" | "people" | "delta" | "audit" | "push";
+  setPane: (p: "mapping" | "people" | "delta" | "audit" | "push") => void;
+  busy: boolean;
+  onPush: (retry?: boolean) => void;
+  onRollback: () => void;
 }) {
   return (
     <div className="rounded-xl bg-card p-3 shadow-card sm:p-4">
       <div className="flex gap-1 overflow-x-auto">
-        {(["mapping", "people", "delta", "audit"] as const).map((id) => (
+        {(["mapping", "people", "delta", "audit", "push"] as const).map((id) => (
           <button
             key={id}
             type="button"
@@ -426,7 +436,7 @@ function Workbench({
               pane === id ? "bg-foreground text-background" : "text-muted-foreground hover:bg-muted",
             )}
           >
-            {id === "delta" ? "Delta" : id}
+            {id === "delta" ? "Delta" : id === "push" ? "Push" : id}
           </button>
         ))}
       </div>
@@ -435,6 +445,7 @@ function Workbench({
         {pane === "people" && <PeopleTable job={job} />}
         {pane === "delta" && <DeltaPanel job={job} />}
         {pane === "audit" && <AuditList job={job} />}
+        {pane === "push" && <PushPanel job={job} busy={busy} onPush={onPush} onRollback={onRollback} />}
       </div>
     </div>
   );
@@ -642,7 +653,7 @@ function PushPanel({
           <p className="text-[11px] uppercase tracking-wider text-muted-foreground">Target API</p>
           <h2 className="font-display text-2xl">POST /api/v1/employee</h2>
           <p className="text-sm text-muted-foreground">
-            Stub employee master. Per-record 201 / 409 / 422 / 503. Batch rollback
+            Stub target employee master. Per-record 201 / 409 / 422 / 503. Batch rollback
             issues DELETE for every success in this load.
           </p>
         </div>
