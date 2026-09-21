@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: meridian
+    name: Migration-Console
     runtime: node
     buildCommand: npm install && npm run build
     startCommand: npm start
