@@ -4,7 +4,7 @@ Implementation console for **autonomous HR data migration**.
 
 Migration-Console reads multiple messy client extracts (CSV / Excel), maps them onto an employee master **without a pre-written field map**, cleans what is mechanically safe, and stops for a consultant only when a guess would be irresponsible. A stub target API then accepts the load with per-record success/failure, retry, and batch rollback. Every decision is audited.
 
-## What to demo
+## Tour
 
 1. Open the app and click **Run Apex Manufacturing demo**.
 2. Watch the agent ingest two CSVs + one Excel workbook, auto-map, and pause.
