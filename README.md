@@ -1,15 +1,15 @@
-# Meridian
+# Migration-Console
 
-Implementation console for **autonomous HR data migration** — built as a Darwinbox-style FDE take-home.
+Implementation console for **autonomous HR data migration**.
 
-Meridian reads multiple messy client extracts (CSV / Excel), maps them onto an employee master **without a pre-written field map**, cleans what is mechanically safe, and stops for a consultant only when a guess would be irresponsible. A stub target API then accepts the load with per-record success/failure, retry, and batch rollback. Every decision is audited.
+Migration-Console reads multiple messy client extracts (CSV / Excel), maps them onto an employee master **without a pre-written field map**, cleans what is mechanically safe, and stops for a consultant only when a guess would be irresponsible. A stub target API then accepts the load with per-record success/failure, retry, and batch rollback. Every decision is audited.
 
 ## What to demo
 
 1. Open the app and click **Run Apex Manufacturing demo**.
 2. Watch the agent ingest two CSVs + one Excel workbook, auto-map, and pause.
 3. Work the **Needs a call** queue (ambiguous date, CTC conflict, fuzzy duplicate, unknown enum, personal email). One-click resolve.
-4. Open **Delta** — client-specific rules inferred on top of the core engine.
+4. Open **Delta** - client-specific rules inferred on top of the core engine.
 5. **Push to target**. Employee `1008` fails once with `503`; hit **Retry failed**, then optionally **Rollback batch**.
 
 ## Escalation boundary
@@ -18,27 +18,26 @@ Auto-apply only when a mapping is ≥82% confident **and** 18 points ahead of th
 
 The agent may be wrong in the audit log. It may not be quietly wrong in the target HRIS.
 
-Details: [APPROACH.md](./APPROACH.md) and the in-app **Approach** page.
+Details: [WRITEUP.md](./WRITEUP.md) and the in-app **WRITEUP** page.
 
 ## Stack
 
 - TanStack Start (React 19) + TanStack Router
 - Tailwind v4
 - Server functions for the agent pipeline
-- Heuristic mapper + optional xAI (`grok-4.5`) assist for leftover columns
+- Heuristic mapper(optional xAI (`grok-4.5`) assist for leftover columns)
 - SheetJS for Excel
-- SQLite (Node's built-in `node:sqlite`) for job persistence — no external DB service, no native build step
+- SQLite (Node's built-in `node:sqlite`) for job persistence- no external DB service, no native build step
 
-No auth. Job state — files, mappings, escalations, audit trail — is persisted to SQLite (see [Persistence](#persistence) below), so it survives a server restart; a replay of the run is still the audit log itself.
+No auth. Job state- files, mappings, escalations, audit trail, is persisted to SQLite (see [Persistence](#persistence) below), so it survives a server restart; a replay of the run is still the audit log itself.
 
 ## Persistence
 
 Every job (its files, column mappings, records, escalations, events, and audit trail) is written to a local SQLite database via Node's built-in [`node:sqlite`](https://nodejs.org/api/sqlite.html) module — no separate database service to run, no native bindings to compile. `src/lib/migration/store.ts` is the only file that touches it; the rest of the pipeline reads/writes jobs through `saveJob` / `getJob` / `listJobs` exactly as it did before.
 
-- **Location**: `./data/meridian.db` by default, created on first write. Override with `MERIDIAN_DB_PATH` (see `.env.example`) — point it at a mounted volume on hosts with an ephemeral filesystem, or set it to `:memory:` to opt back into pure in-memory state.
-- **Shape**: one row per job (`id`, `client_name`, `status`, `created_at` as indexed columns; the full job as a JSON blob) — enough structure to list and sort jobs in SQL without loading everything into memory, without a multi-table schema migration for what's still a single-tenant prototype.
-- **Restart-safe**: kill the server mid-run and start it again — `GET`ting a job by id, or the recent-jobs list, comes back from disk, not from a Map that reset to empty.
-- **Not yet covered**: this makes job *state* durable, not the *filesystem* it might run on — an ephemeral disk (many PaaS free tiers) still loses `./data` on redeploy unless you mount a persistent volume there.
+- **Location**: `./data/meridian.db` by default, created on first write. Override with `MERIDIAN_DB_PATH` (see `.env.example`)- point it at a mounted volume on hosts with an ephemeral filesystem, or set it to `:memory:` to opt back into pure in-memory state.
+- **Shape**: one row per job (`id`, `client_name`, `status`, `created_at` as indexed columns; the full job as a JSON blob)- enough structure to list and sort jobs in SQL without loading everything into memory, without a multi-table schema migration for what's still a single-tenant prototype.
+- **Restart-safe**: kill the server mid-run and start it again- `GET`ting a job by id, or the recent-jobs list, comes back from disk, not from a Map that reset to empty.
 
 
 ## Getting started
@@ -55,23 +54,13 @@ npm run build
 npm start            # serves the Nitro output from .output/
 ```
 
-Optional: copy `.env.example` to `.env` and set `XAI_API_KEY` to enable model assist on uncertain columns. The demo is fully usable without it.
+(Fully Optional: copy `.env.example` to `.env` and set `XAI_API_KEY` to enable model assist on uncertain columns.)
 
-## Deploying
+## Deployed 
+[Live Link](https://migration-console.onrender.com/)
 
-### Render
-
-Create a **Web Service** from this repo (a matching `render.yaml` is included, so "New +  → Blueprint" will pick it up automatically). Manual settings, if you'd rather set it up by hand:
-
-| Setting | Value |
-|---|---|
-| Runtime | Node 22 |
-| Build | `npm install && npm run build` |
-| Start | `npm start` |
-
-### Any other Node host (Fly.io, Railway, a VPS, etc.)
-
-The build produces a self-contained Nitro server at `.output/server/index.mjs`. Any host that can run `npm install && npm run build` then `npm start` on Node 20+ works.
+## Demo 
+[Demo Link](https://youtu.be/8ph9EYvbOfA)
 
 ## Engine tests
 
