@@ -2,7 +2,7 @@ import { createRootRoute, HeadContent, Outlet, Scripts } from "@tanstack/react-r
 import { Toaster } from "sonner";
 import appCss from "../styles.css?url";
 
-const APP_NAME = "Meridian";
+const APP_NAME = "Migration-Console";
 
 export const Route = createRootRoute({
   head: () => ({
