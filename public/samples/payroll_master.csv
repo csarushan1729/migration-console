@@ -1,0 +1,15 @@
+employee_no,first_name,last_name,join_date,employment_type,ctc,currency,email_official,Pay Date
+1001,Rajesh,Kumar,2014-06-15,Permanent,920000,INR,rajesh.kumar@apexmfg.in,2026-08-31
+1002,Priya,Mehta,2019-08-01,Permanent,1450000,INR,priya.mehta@apexmfg.in,2026-08-31
+1002,Priya,Mehta,2019-08-01,Permanent,1450000,INR,priya.mehta@apexmfg.in,2026-08-31
+1003,Arun,Nair,2009-02-03,Permanent,2860000,INR,arun.nair@apexmfg.in,2026-08-31
+1004,Sneha,Iyer,2021-07-22,Contract,780000,INR,sneha.iyer@apexmfg.in,2026-08-31
+1005,Deepak,Verma,2017-04-03,Permanent,810000,INR,deepak.verma@apexmfg.in,2026-08-31
+1006,Kavya,Sharma,2018-10-11,Permanent,1320000,INR,kavya.sharma@apexmfg.in,2026-08-31
+1008,Amit,Patel,2018-03-22,Permanent,640000,INR,amit.patel@apexmfg.in,2026-08-31
+1009,Vikram,Singh,2020-11-02,Permanent,1100000,INR,,2026-08-31
+1010,Farhan,Qureshi,2015-01-19,Permanent,890000,INR,farhan.qureshi@apexmfg.in,2026-08-31
+1011,Ananya,Rao,2022-05-16,Intern,240000,INR,ananya.rao@apexmfg.in,2026-08-31
+1012,Neha,Kapoor,2022-01-10,Permanent,540000,INR,neha.kapoor@apexmfg.in,2026-08-31
+1013,Rohan,Desai,2012-06-01,Permanent,1680000,INR,rohan.desai@apexmfg.in,2026-08-31
+1014,Pooja,Nair,2023-03-15,Permanent,720000,INR,pooja.nair@apexmfg.in,2026-08-31

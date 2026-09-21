@@ -1,0 +1,14 @@
+\uFEFFEmpCode,Employee Name,DOB,Gender,Dept,Designation,Title,DOJ,Status,PAN,Location,GrossCTC,Cost Center,EmpType
+APX-1001,RAJESH KUMAR,21/03/1988,M,Manufacturing,Plant Supervisor,Supervisor,15-Jun-2014,Active,ABCDE1234F,Pune Plant,980000,MFG-PUN,Permanent
+APX-1002,Priya Mehta,1992-07-21,Female,Human Resources,HR Business Partner,HR BP,2019-08-01,Active,XYZAB5678C,Pune HO,1450000,HR-PUN,Permanent
+APX-1003,Dr. Arun Nair,14-Nov-1979,Male,Manufacturing,Plant Head,Plant Head,03-Feb-2009,Active,PQRST9012U,Pune Plant,2860000,MFG-PUN,Permanent
+APX-1004,Sneha Iyer,1994-01-09,F,Finance,Accounts Executive,Executive,22/07/2021,Active,LMNOP3456Q,Mumbai,780000,FIN-MUM,Contract
+APX-1005,Deepak Verma,18/12/1991,Transgender,Quality,Quality Engineer,QE,2017-04-03,Active,AAAAA1111A,Pune Plant,810000,QMS-PUN,Permanent
+APX-1006,Kavya Sharma,05/06/1991,Female,Sales,Regional Sales Manager,RSM,11-Oct-2018,Active,BBBBB2222B,Delhi,1320000,SAL-DEL,Permanent
+APX-1007,Meera Joshi,27/02/1990,F,Human Resources,Recruiter,Recruiter,2016-09-12,Active,CCCCC3333C,Pune HO,610000,HR-PUN,Permanent
+APX-1008,Amit Patel,03/11/1990,M,Finance,Accounts Executive,Executive,2018-03-22,Active,,Mumbai,640000,FIN-MUM,Permanent
+APX-1009,Vikram Singh,1993-08-30,Male,Sales,Sales Executive,Executive,02-Nov-2020,Active,DDDDD4444D,Delhi Sales,1100000,SAL-DEL,Permanent
+APX-1010,Farhan Qureshi,16/05/1987,M,IT,Systems Engineer,Engineer,2015-01-19,Active,EEEEE5555E,Pune HO,890000,IT-PUN,Permanent
+APX-1012,Neha Kapoor,1995-09-02,Female,Manufacturing,Shift Lead,Lead,2022-01-10,Absconding,FFFFF6666F,Pune Plant,540000,MFG-PUN,Permanent
+APX-1013,Rohan Desai,09-Dec-1985,Male,Quality,Quality Manager,Manager,2012-06-01,Active,GGGGG7777G,Pune Plant,1680000,QMS-PUN,Permanent
+APX-1014,Pooja,21/07/1996,F,Finance,Payroll Specialist,Specialist,2023-03-15,Active,HHHHH8888H,Mumbai,720000,FIN-MUM,Permanent

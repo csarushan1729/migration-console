@@ -1,0 +1,14 @@
+username,display_name,work_email,manager_emp_id,office,mobile,emp_id,role
+rkumar,Rajesh Kumar,rajesh.kumar@apexmfg.in,1003,Pune - Plant 1,+91 98765 43210,APX-1001,Supervisor
+pmehta,Priya Mehta,priya.mehta@apexmfg.in,1003,Head Office Pune,9876543211,APX-1002,HR Business Partner
+anair,Arun Nair,arun.nair@apexmfg.in,,Pune - Plant 1,9820011003,APX-1003,Plant Head
+dverma,Deepak Verma,deepak.verma@apexmfg.in,1013,Pune - Plant 1,9000010005,APX-1005,Quality Engineer
+ksharma,Kavya Sharma,kavya.sharma@apexmfg.in,1003,Delhi Sales,9810011006,APX-1006,Regional Sales Manager
+mjoshi,Meera Joshi,meera.joshi@apexmfg.in,1002,Head Office Pune,9810011007,APX-1007,Recruiter
+apatel,Amit Patel,amit.patel@apexmfg.in,1003,Mumbai Finance,9810011008,APX-1008,Accounts Executive
+vsingh,Vikram Singh,vikram.s@gmail.com,1006,Delhi Sales,9988776655,APX-1009,Sales Executive
+fqureshi,Farhan Qureshi,farhan.qureshi@apexmfg.in,1003,Head Office Pune,9810091010,APX-1010,Systems Engineer
+fqureshi2,F. Qureshi,f.qureshi@apexmfg.in,1003,Head Office Pune,9810091010,APX-1010B,Sys Engineer
+arao,Ananya Rao,ananya.rao@apexmfg.in,1007,Head Office Pune,9810011011,APX-1011,Intern
+rdesai,Rohan Desai,rohan.desai@apexmfg.in,1003,Pune - Plant 1,9810011013,APX-1013,Quality Manager
+pnair,Pooja Nair,pooja.nair@apexmfg.in,1003,Mumbai Finance,9810011014,APX-1014,Payroll Specialist

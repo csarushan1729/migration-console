@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Instrument+Serif:ital@0;1&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-display: "Instrument Serif", "Times New Roman", serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --color-background: #f3f1ec;
+  --color-foreground: #1a1f1c;
+  --color-card: #fffcf7;
+  --color-muted: #ece8e0;
+  --color-muted-foreground: #5f6762;
+  --color-primary: #1f6b5a;
+  --color-primary-foreground: #f4f8f6;
+  --color-border: #d9d3c7;
+  --color-ring: #1f6b5a;
+  --color-destructive: #8f2d2a;
+  --color-destructive-foreground: #fdf6f5;
+  --color-warning: #8a5a12;
+  --color-warning-foreground: #fbf4e8;
+  --color-accent: #1f6b5a;
+  --color-accent-foreground: #f4f8f6;
+  --color-sidebar: #ebe6dc;
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  --shadow-border:
+    0px 0px 0px 1px rgba(26, 31, 28, 0.06),
+    0px 1px 2px -1px rgba(26, 31, 28, 0.06),
+    0px 2px 4px 0px rgba(26, 31, 28, 0.04);
+  --shadow-border-hover:
+    0px 0px 0px 1px rgba(26, 31, 28, 0.08),
+    0px 1px 2px -1px rgba(26, 31, 28, 0.08),
+    0px 2px 4px 0px rgba(26, 31, 28, 0.06);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    font-family: var(--font-display);
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-primary) 22%, white);
+  }
+}
+
+@utility font-display {
+  font-family: var(--font-display);
+}
+
+.shadow-card {
+  box-shadow: var(--shadow-border);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
