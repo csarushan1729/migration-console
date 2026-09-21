@@ -33,7 +33,7 @@ No auth. Job state- files, mappings, escalations, audit trail, is persisted to S
 
 ## Persistence
 
-Every job (its files, column mappings, records, escalations, events, and audit trail) is written to a local SQLite database via Node's built-in [`node:sqlite`](https://nodejs.org/api/sqlite.html) module — no separate database service to run, no native bindings to compile. `src/lib/migration/store.ts` is the only file that touches it; the rest of the pipeline reads/writes jobs through `saveJob` / `getJob` / `listJobs` exactly as it did before.
+Every job (its files, column mappings, records, escalations, events, and audit trail) is written to a local SQLite database via Node's built-in [`node:sqlite`](https://nodejs.org/api/sqlite.html) module- no separate database service to run, no native bindings to compile. `src/lib/migration/store.ts` is the only file that touches it; the rest of the pipeline reads/writes jobs through `saveJob` / `getJob` / `listJobs` exactly as it did before.
 
 - **Location**: `./data/meridian.db` by default, created on first write. Override with `MERIDIAN_DB_PATH` (see `.env.example`)- point it at a mounted volume on hosts with an ephemeral filesystem, or set it to `:memory:` to opt back into pure in-memory state.
 - **Shape**: one row per job (`id`, `client_name`, `status`, `created_at` as indexed columns; the full job as a JSON blob)- enough structure to list and sort jobs in SQL without loading everything into memory, without a multi-table schema migration for what's still a single-tenant prototype.
