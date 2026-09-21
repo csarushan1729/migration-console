@@ -18,7 +18,7 @@ Auto-apply only when a mapping is ≥82% confident **and** 18 points ahead of th
 
 The agent may be wrong in the audit log. It may not be quietly wrong in the target HRIS.
 
-Details: [WRITEUP.md](./WRITEUP.md) and the in-app **WRITEUP** page.
+Details: [WRITEUP.md](./WRITEUP.md).
 
 ## Stack
 
