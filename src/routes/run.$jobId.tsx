@@ -642,7 +642,7 @@ function PushPanel({
           <p className="text-[11px] uppercase tracking-wider text-muted-foreground">Target API</p>
           <h2 className="font-display text-2xl">POST /api/v1/employee</h2>
           <p className="text-sm text-muted-foreground">
-            Stub Darwinbox employee master. Per-record 201 / 409 / 422 / 503. Batch rollback
+            Stub employee master. Per-record 201 / 409 / 422 / 503. Batch rollback
             issues DELETE for every success in this load.
           </p>
         </div>

@@ -59,7 +59,7 @@ function applyOne(job: Job, apply: EscalationApply): string {
           id: uid("delta"),
           origin: "human",
           title: "Absconding → terminated + separation reason",
-          detail: "Apex uses Absconding as an HR status. Darwinbox models this as terminated plus a leaving reason. Capture as a delta, not a new enum.",
+          detail: "Apex uses Absconding as an HR status. Models this as terminated plus a leaving reason. Capture as a delta, not a new enum.",
           appliesTo: "status",
         });
       }

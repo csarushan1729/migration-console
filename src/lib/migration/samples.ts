@@ -1,7 +1,7 @@
 /** Apex Manufacturing — messy multi-system dump used as the default engagement. */
 
 export const SAMPLE_CLIENT = "Apex Manufacturing Pvt Ltd";
-export const SAMPLE_ENGAGEMENT = "Employee master · cutover to Darwinbox";
+export const SAMPLE_ENGAGEMENT = "Employee master";
 
 export const LEGACY_HRIS_CSV = `\uFEFFEmpCode,Employee Name,DOB,Gender,Dept,Designation,Title,DOJ,Status,PAN,Location,GrossCTC,Cost Center,EmpType
 APX-1001,RAJESH KUMAR,21/03/1988,M,Manufacturing,Plant Supervisor,Supervisor,15-Jun-2014,Active,ABCDE1234F,Pune Plant,980000,MFG-PUN,Permanent

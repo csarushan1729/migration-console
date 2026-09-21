@@ -1,8 +1,8 @@
 {
-  "name": "meridian",
+  "name": "Migration-Console",
   "private": true,
   "version": "1.0.0",
-  "description": "Meridian — autonomous HR data migration console (Darwinbox FDE take-home).",
+  "description": "Migration-Console - autonomous HR data migration console.",
   "type": "module",
   "scripts": {
     "dev": "vite dev --host 0.0.0.0 --port 8080",
