@@ -67,10 +67,8 @@ function Home() {
               The agent maps the mess. You only take the calls that matter.
             </h1>
             <p className="mt-4 max-w-xl text-base text-muted-foreground">
-              Meridian reads multiple HR exports, maps them onto an employee master,
+              It reads multiple HR exports, maps them onto an employee master,
               cleans what is safe, and stops when a guess would be irresponsible.
-              Built for a Darwinbox-style cutover — watched by an implementation
-              consultant, not a developer.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button onClick={runSample} disabled={busy} size="lg">
@@ -96,7 +94,6 @@ function Home() {
             </div>
             <p className="mt-3 text-xs text-muted-foreground">
               Demo loads two CSVs and one Excel workbook from three source systems.
-              No field-by-field map is provided.
             </p>
           </section>
 
@@ -110,7 +107,7 @@ function Home() {
                   className="mt-1 w-full bg-transparent font-display text-2xl tracking-tight outline-none"
                   suppressHydrationWarning
                 />
-                <p className="text-sm text-muted-foreground">Target · Darwinbox Employee Master</p>
+                <p className="text-sm text-muted-foreground">Target · Employee Master</p>
               </div>
               <Badge variant="primary">3 sources</Badge>
             </div>
