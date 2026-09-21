@@ -10,7 +10,7 @@ Migration-Console reads multiple messy client extracts (CSV / Excel), maps them 
 2. Watch the agent ingest two CSVs + one Excel workbook, auto-map, and pause.
 3. Work the **Needs a call** queue (ambiguous date, CTC conflict, fuzzy duplicate, unknown enum, personal email). One-click resolve.
 4. Open **Delta** - client-specific rules inferred on top of the core engine.
-5. **Push to target**. Employee `1008` fails once with `503`; hit **Retry failed**, then optionally **Rollback batch**.
+5. **Push to target**. If anything fails; hit **Retry failed**, then for any use you can **Rollback batch**.
 
 ## Escalation boundary
 
