@@ -4,8 +4,6 @@ import viteReact from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import { nitro } from "nitro/vite";
 
-// Standalone TanStack Start config — no auth, no DB, no platform-specific
-// middleware. Job state lives in memory on the server (see src/lib/migration/store.ts).
 export default defineConfig(({ command, isPreview }) => ({
   server: {
     host: "0.0.0.0",
