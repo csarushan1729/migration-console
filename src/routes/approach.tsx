@@ -35,11 +35,11 @@ function Approach() {
           (or ≥92% certain, even with a thin margin).
           That bar is high on purpose: a wrong column map poisons every row. Dates
           whose first part is greater than 12, ISO dates, and named months are
-          mechanical. 05/06/1991 is not —
+          mechanical. 05/06/1991 is not -
           India is DMY and US payroll extracts are often MDY, so locale is a client
           decision, not a default. Exact duplicates collapse; fuzzy people (same
           mobile, two employee numbers) never do. Compensation mismatches always
-          escalate — money is not a synonym problem. Unknown enums are not stuffed
+          escalate - money is not a synonym problem. Unknown enums are not stuffed
           into “other”; that hides the delta the FDE is actually being paid to find
           (absconding as a status, gender identity gaps). Personal mailboxes are
           never silently accepted as work email.
@@ -57,7 +57,7 @@ function Approach() {
           APX- prefixes, Permanent→full_time, absconding as a separation reason,
           a second IT id for the same person. Migration Console records those as a
           playbook so the next file drop does not relitigate them. That is delta
-          solutioning — configuration on top of a core engine, not a one-off spreadsheet.
+          solutioning - configuration on top of a core engine, not a one-off spreadsheet.
         </p>
 
         <h2 className="mt-8 font-sans text-sm font-semibold uppercase tracking-[0.14em] text-muted-foreground">
