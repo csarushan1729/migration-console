@@ -10,7 +10,7 @@ function Approach() {
         <p className="text-xs font-medium uppercase tracking-[0.18em] text-primary">One page</p>
         <h1 className="mt-2 text-4xl">Where the agent stops — and why</h1>
         <p className="mt-4 text-muted-foreground">
-          Meridian is an implementation console, not a chatbot with a CSV parser.
+          Migration Console is an implementation console, not a chatbot with a CSV parser.
           The product decision is the escalation boundary. Everything else is
           machinery in service of that line.
         </p>
@@ -21,7 +21,7 @@ function Approach() {
         <p className="mt-3">
           Three messy extracts (legacy HRIS, payroll, IT directory) are profiled,
           mapped with synonym + type scores, optionally reviewed by a model for
-          leftover columns, then cleaned, merged, and validated against a Darwinbox-like
+          leftover columns, then cleaned, merged, and validated against a target
           employee master. The agent applies a change only when it could defend it
           to a client on a cutover call. Everything else becomes a queue item with
           evidence, a recommendation, and one-click resolutions.
@@ -55,9 +55,9 @@ function Approach() {
         <p className="mt-3">
           Mapping is the commodity. The client-specific remainder is the job:
           APX- prefixes, Permanent→full_time, absconding as a separation reason,
-          a second IT id for the same person. Meridian records those as a playbook
-          so the next file drop does not relitigate them. That is delta solutioning —
-          configuration on top of a core engine, not a one-off spreadsheet.
+          a second IT id for the same person. Migration Console records those as a
+          playbook so the next file drop does not relitigate them. That is delta
+          solutioning — configuration on top of a core engine, not a one-off spreadsheet.
         </p>
 
         <h2 className="mt-8 font-sans text-sm font-semibold uppercase tracking-[0.14em] text-muted-foreground">
@@ -66,7 +66,7 @@ function Approach() {
         <ul className="mt-3 list-disc space-y-2 pl-5 text-muted-foreground">
           <li>Persistent client playbooks and active learning from consultant decisions.</li>
           <li>Incremental (true payroll delta) loads, not only full cutover.</li>
-          <li>Direct Darwinbox employee-master API, with org units and positions.</li>
+          <li>Direct integration against a real target employee-master API, with org units and positions.</li>
           <li>PII masking in the console; approval via Teams for high-impact fields.</li>
           <li>Calibration: measure how often recommendations are accepted, tighten thresholds.</li>
         </ul>
