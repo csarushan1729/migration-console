@@ -5,7 +5,6 @@ import reactRefresh from "eslint-plugin-react-refresh";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 
-/** Flat ESLint config for the TanStack Start app-builder template. */
 export default tseslint.config(
   {
     ignores: [
@@ -42,6 +41,5 @@ export default tseslint.config(
       "@typescript-eslint/no-explicit-any": "off",
     },
   },
-  // Disable rules that conflict with Prettier formatting.
   prettier,
 );
